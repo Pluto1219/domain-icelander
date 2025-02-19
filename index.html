@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lén til sölu / Domain for Sale</title>
+	<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            cursor: pointer;
+            }
+
+        .domain-container {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #00ff00;
+            text-align: center;
+            max-width: 800px;
+            width: 95%;
+            position: relative;
+            z-index: 2;
+            }
+
+        h1 {
+            color: #00ff00;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff00;
+            }
+
+        p {
+            color: #0f0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            }
+
+        .domain-name {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+            }
+
+        @keyframes glow {
+                from { text-shadow: 0 0 5px #00ff00; }
+        to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
+        }
+
+        .price-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            }
+
+        .price-label {
+            font-size: 1.2em;
+            color: #555;
+            margin-right: 10px;
+            }
+
+        .price {
+            font-size: 2.5em;
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+            }
+
+        .contact-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            }
+
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #00ff00, #00b7ff, #00ff00);
+            border-radius: 8px;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            }
+
+        .contact-button:hover {
+            color: #fff;
+            background: transparent;
+            }
+
+        .contact-button:hover::before {
+            opacity: 1;
+            }
+
+        .additional-info {
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+            }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;/* 确保语言切换按钮在星星之上 */
+        }
+
+        .language-toggle button {
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: #00ff00;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+            }
+
+        .language-toggle button:hover {
+            color: #00b7ff;
+            }
+
+        .email-display {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #00ff00;
+            }
+
+        /* Tech/AI elements */
+        .ai-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            }
+
+        .ai-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff00;
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            }
+
+        @keyframes float {
+                0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        }
+
+        /* Shooting Star/Meteor Effect */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #fff);
+            opacity: 0;
+            animation: shoot 2s linear infinite;
+            }
+
+        @keyframes shoot {
+                0% {
+            transform: translateY(0) translateX(0); /* 修改起始位置 */
+            opacity: 1;
+            }
+        100% {
+            transform: translateY(100vh) translateX(0); /* 保持水平位置不变 */
+            opacity: 0;
+            }
+        }
+	</style>
+</head>
+<body>
+<audio id="backgroundMusic"  loop>
+	<source src="./Solitude.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>
+
+<div class="domain-container">
+	<div class="ai-particles">
+		<div class="ai-particle" style="top: 20%; left: 10%; animation-delay: 1s;"></div>
+		<div class="ai-particle" style="top: 50%; left: 40%; animation-delay: 2s;"></div>
+		<div class="ai-particle" style="top: 70%; left: 70%; animation-delay: 3s;"></div>
+	</div>
+	<div class="language-toggle">
+		<button onclick="changeLanguage('is')">IS</button>
+		<button onclick="changeLanguage('en')">EN</button>
+	</div>
+
+	<h1 id="title">Lén til sölu</h1>
+	<p id="description">Ertu að leita að frábæru léni fyrir næsta verkefni þitt? Þetta eftirtektarverða lén er nú til sölu!</p>
+	<div class="domain-name">icelander.ai</div>
+	<div class="price-section">
+		<span class="price-label" id="priceLabel">Verð:</span>
+		<span class="price" id="price">Samningsatriði</span>
+	</div>
+	<a href="mailto:netfang@thinnnetfang.is" class="contact-button" id="contactButton">Hafa samband vegna kaupa</a>
+	<p class="additional-info" id="additionalInfo">Ekki hika við að hafa samband ef þú hefur áhuga eða vilt gera tilboð. Lénið er tilbúið til flutnings um leið og samkomulag næst.</p>
+	<div class="email-display" id="emailDisplay">netfang@thinnnetfang.is</div>
+</div>
+
+<script>
+    document.body.addEventListener('click', function() {
+        const audio = document.getElementById('backgroundMusic');
+        audio.play();
+    });
+
+    const texts = {
+        'is': {
+            'title': 'Lén til sölu',
+            'description': 'Ertu að leita að frábæru léni fyrir næsta verkefni þitt? Þetta eftirtektarverða lén er nú til sölu!',
+            'priceLabel': 'Verð:',
+            'price': 'Samningsatriði',
+            'contactButton': 'Hafa samband vegna kaupa',
+            'additionalInfo': 'Ekki hika við að hafa samband ef þú hefur áhuga eða vilt gera tilboð. Lénið er tilbúið til flutnings um leið og samkomulag næst.',
+            'emailDisplay': 'plutoals@gmail.com'
+        },
+        'en': {
+            'title': 'Domain for Sale',
+            'description': 'Looking for an excellent domain for your next project? This remarkable domain is now for sale!',
+            'priceLabel': 'Price:',
+            'price': 'Negotiable',
+            'contactButton': 'Contact for Purchase',
+            'additionalInfo': 'Don\'t hesitate to contact us if you\'re interested or want to make an offer. The domain is ready for transfer as soon as an agreement is reached.',
+            'emailDisplay': 'plutoals@gmail.com'
+        }
+    };
+
+    function changeLanguage(lang) {
+        document.getElementById('title').innerText = texts[lang]['title'];
+        document.getElementById('description').innerText = texts[lang]['description'];
+        document.getElementById('priceLabel').innerText = texts[lang]['priceLabel'];
+        document.getElementById('price').innerText = texts[lang]['price'];
+        document.getElementById('contactButton').innerText = texts[lang]['contactButton'];
+        document.getElementById('additionalInfo').innerText = texts[lang]['additionalInfo'];
+        document.getElementById('emailDisplay').innerText = texts[lang]['emailDisplay'];
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function getRandomStartPosition() {
+        return {
+            top: Math.random() * 100,
+            left: Math.random() * 100
+        };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const shootingStarContainer = document.body;
+        const numberOfStars = 20;
+
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('shooting-star');
+
+            const startPosition = getRandomStartPosition();
+            star.style.top = `${startPosition.top}%`;
+            star.style.left = `${startPosition.left}%`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            star.style.background = `linear-gradient(to bottom, transparent, ${getRandomColor()})`;
+
+            shootingStarContainer.appendChild(star);
+        }
+    });
+</script>
+</body>
+</html>
